@@ -58,7 +58,17 @@ country_event = {
 	desc = ww1_greece.6.d
 	#picture = ww1_greece.6
 
-	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GRE
+		GRE = { NOT { is_in_faction_with = TUR } }
+		country_exists = TUR
+		TUR = { NOT { is_puppet_of = GRE } }
+		date > 1919.5.1
+	}
+	
+	mean_time_to_happen = { days = 2 }
 	
 	# GRE Yes
 	option = {
